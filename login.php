@@ -33,6 +33,7 @@ if (empty($_POST)===false) {
 
 }
 
+
 include 'includes/overall/header.php';
 output_errors($errors);
 include 'includes/overall/footer.php';

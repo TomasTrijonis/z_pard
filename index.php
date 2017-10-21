@@ -4,7 +4,7 @@ include 'includes/overall/header.php';
 ?>
 
 		<h1>Hello</h1>
-		<p>Just a template. Yay.L</p>
+		<p>Just a template.</p>
 
 		
 <?php include 'includes/overall/footer.php';
