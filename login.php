@@ -1,11 +1,6 @@
 <?php
 include 'core/init.php';
-include 'includes/overall/header.php';
 
-if (user_exists('user')==true)
-{
-	echo 'exists';
-	} 
 
 
 if (empty($_POST)===false) {
@@ -35,9 +30,10 @@ if (empty($_POST)===false) {
 		
 		
 	}
-	
-	print_r($errors);
+
 }
 
+include 'includes/overall/header.php';
+output_errors($errors);
 include 'includes/overall/footer.php';
 ?>
