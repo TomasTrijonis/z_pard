@@ -8,7 +8,11 @@
 				
 				while($row = $result->fetch_assoc()) {
 					
-					echo $row['PAV'], '<br>';
+					echo $row['PAV'],' ---- ';
+					echo $row['PRICE'],'€';
+					?>
+					<br>
+					<?php
 					
 				}
 				

@@ -15,6 +15,12 @@ if(logged_in()===true){
 
 $errors=array();
 
+
+
+
+
+
+
 // isveda (norimus duomenis is database i ekrana
 /*
 			if($result = $con->query("SELECT * FROM zaidimai")) {
