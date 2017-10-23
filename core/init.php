@@ -14,4 +14,23 @@ if(logged_in()===true){
 }
 
 $errors=array();
+
+// isveda (norimus duomenis is database i ekrana
+/*
+			if($result = $con->query("SELECT * FROM zaidimai")) {
+
+			if($result->num_rows) {
+				
+				
+				
+				while($row = $result->fetch_assoc()) {
+					
+					echo $row['PAV'], '<br>';
+					
+				}
+				
+				
+			}
+			}
+*/
 ?>

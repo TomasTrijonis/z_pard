@@ -7,5 +7,18 @@ include 'includes/overall/header.php';
 		<p>Just a template.</p>
 
 		
+<<<<<<< HEAD
 <?php include 'includes/overall/footer.php';
 ?>
+=======
+		<?php
+		include 'core/database/showfiles.php';
+		?>
+		
+	
+	
+	 
+	
+	
+<?php include 'includes/overall/footer.php'; ?>
+>>>>>>> user-data
