@@ -50,7 +50,7 @@ Kūrėjų studija: <input type="text" name="DEV" /> <br><br>
 </select> <br><br>
 
 Kaina (€): <input type="number" name="PRICE" min="0" step="0.01"/> <br><br>
-Nuotruka: <input type="file" name="fileToUpload" id="fileToUpload"> <br><br>
+Nuotrauka: <input type="file" name="fileToUpload" id="fileToUpload"> <br><br>
 <input type="submit" name="submit" ><br><br>
 </form>
 

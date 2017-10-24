@@ -45,16 +45,16 @@ include 'core/database/showfiles.php';
 
 
 <body>
-    
+    	<br>	
      <?php
 			$result = mysqli_query($con, "SELECT * FROM zaidimai ORDER BY gameid DESC")
 	 ?>
- 
-    <table width='80%' border=0>
+	
+    <table width='70%' border=0>
         <tr bgcolor='#CCCCCC'>
             <td>Pavadinimas</td>
             <td>Developeris</td>
-            <td>Žanras</td>
+            <td>Žanras</td>	
             <td>Update</td>
         </tr>
         <?php 
@@ -65,19 +65,21 @@ include 'core/database/showfiles.php';
             echo "<td>".$res['DEV']."</td>";
             echo "<td>".$res['GENRE']."</td>";    
             echo "<td><a href=\"editform.php?gameid=$res[gameid]\">Edit</a> | <a href=\"delete.php?gameid=$res[gameid]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";        
-        }
+		
+		
+		}
         ?>
 		
-		
-		
+	<br><br>	
     <form action="add.php" method="post" name="form1">
-        <table width="25%" border="0">
+        <table width="25%" border="0" style="margin-top:30px;">
+
             <tr> 
                 <td>Pavadinimas</td>
                 <td><input type="text" name="PAV"></td>
             </tr>
             <tr> 
-                <td>Developer</td>
+                <td>Kūrėjas</td>
                 <td><input type="text" name="DEV"></td>
             </tr>
             <tr> 
@@ -86,7 +88,7 @@ include 'core/database/showfiles.php';
             </tr>
             <tr> 
                 <td></td>
-                <td><input type="submit" name="Submit" value="Add"></td>
+                <td><input type="submit" name="Submit" value="Pridėti"></td>
             </tr>
         </table>
     </form>

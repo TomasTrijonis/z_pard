@@ -40,23 +40,23 @@ h2 {
     font:2em Arial;
     margin:0 0 10px 0;
     padding:0;
-    width:200px;
+    width:400px;
     color:#fff;
 }
 /* Containers */
 body {
-    background:lightslategray;
+    background:gray;
     font-family:Arial;
     font-size:0.8em;
 }
 #container, footer {
     background:#fff;
-    width:920px;
+    width:1080px;
     margin:0 auto;
     padding:20px;
 }
 header {
-    width:940px;
+    width:1080px;
     padding:10px;
     margin:0 auto 10px auto;
 }

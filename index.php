@@ -3,8 +3,8 @@ include 'core/init.php';
 include 'includes/overall/header.php'; 
 ?>
 
-		<h1>Hello</h1>
-		<p>Just a template.</p>
+		<h1>Sveiki!</h1>
+		<p>Katalogas:</p>
 		
 		
 		
