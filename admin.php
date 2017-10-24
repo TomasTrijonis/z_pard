@@ -17,7 +17,7 @@ include 'core/database/showfiles.php';
 <br>
 <h3>Įterpkite naują prekę:</h3>
 <br>
-<form action="insert.php" method="POST"> 
+<form action="insert.php" method="POST" enctype="multipart/form-data"> 
 Žaidimo pavadinimas: <input type="text" name="PAV" /> <br><br>
 Kūrėjų studija: <input type="text" name="DEV" /> <br><br>
 
@@ -36,7 +36,8 @@ Kūrėjų studija: <input type="text" name="DEV" /> <br><br>
 </select> <br><br>
 
 Kaina (€): <input type="number" name="PRICE" min="0" step="0.01"/> <br><br>
-<input type="submit" /><br><br>
+Nuotruka: <input type="file" name="fileToUpload" id="fileToUpload"> <br><br>
+<input type="submit" name="submit" ><br><br>
 </form>
 
 <br><br>
