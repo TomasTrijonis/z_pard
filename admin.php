@@ -13,7 +13,21 @@ $result2 = mysqli_query($con, $query2);
 include 'core/database/showfiles.php';
 ?>
 
+
+<?php
+
+		if ($update = $con->query("Update zaidimai SET PAV = 'COUNTERSTRIKE' WHERE DEV = 'Blizzard' ")){
+	
+		echo $con->affected_rows;
+	
+		}
+
+		?>
+
 <html><body>
+
+<h3><a href = "edit1.php"> Tvarkyti individualias prekes </a><h3>
+
 <br>
 <h3>Įterpkite naują prekę:</h3>
 <br>
