@@ -74,15 +74,15 @@ include 'core/database/showfiles.php';
         <table width="25%" border="0">
             <tr> 
                 <td>Pavadinimas</td>
-                <td><input type="text" name="name"></td>
+                <td><input type="text" name="PAV"></td>
             </tr>
             <tr> 
                 <td>Developer</td>
-                <td><input type="text" name="age"></td>
+                <td><input type="text" name="DEV"></td>
             </tr>
             <tr> 
                 <td>Žanras</td>
-                <td><input type="text" name="email"></td>
+                <td><input type="text" name="GENRE"></td>
             </tr>
             <tr> 
                 <td></td>

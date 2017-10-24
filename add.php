@@ -18,7 +18,7 @@ if(isset($_POST['Submit'])) {
         }
         
         if(empty($GENRE)) {
-            echo "<font color='red'>Email field is empty.</font><br/>";
+            echo "<font color='red'>Genre field is empty.</font><br/>";
         }
         
         //link to the previous page
@@ -26,7 +26,7 @@ if(isset($_POST['Submit'])) {
     } else { 
         // if all the fields are filled (not empty)             
         //insert data to database
-        $result = mysqli_query($mysqli, "INSERT INTO zaidimai(PAV,DEV,GENRE) VALUES('$PAV','$DEV','$GENRE')");
+        $result = mysqli_query($con, "INSERT INTO zaidimai(PAV,DEV,GENRE) VALUES('$PAV','$DEV','$GENRE')");
         
         //display success message
         echo "<font color='green'>Data added successfully.";
