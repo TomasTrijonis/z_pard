@@ -3,8 +3,6 @@ include 'core/init.php';
 include 'includes/overall/header.php'; 
 ?>
 
-		<h1>Sveiki!</h1>
-		<p>Katalogas:</p>
 		
 		
 		

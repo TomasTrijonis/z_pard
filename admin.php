@@ -9,23 +9,26 @@ $result2 = $con->query($query2);
 
 <h1> Admin page </h1>
 <br> 	
+
+
 <?php
 include 'core/database/showfiles.php';
 ?>
-
+<br><br>
 
 <?php
 
-		if ($update = $con->query("Update zaidimai SET PAV = 'COUNTERSTRIKE' WHERE DEV = 'Blizzard' ")){
+		// if ($update = $con->query("Update zaidimai SET PAV = 'Overwatch' WHERE DEV = 'Blizzard' ")){
 	
-		echo $con->affected_rows;
+		// echo $con->affected_rows;
 	
-		}
+		// }
 
 		?>
 
 <html><body>
-
+<div id="tvarkymas">
+<br><br>
 <h3><a href = "edit1.php"> Tvarkyti individualias prekes </a><h3>
 
 <br>
@@ -35,9 +38,9 @@ include 'core/database/showfiles.php';
 Žaidimo pavadinimas: <input type="text" name="PAV" /> <br><br>
 Kūrėjų studija: <input type="text" name="DEV" /> <br><br>
 
-Žanras/Kategorija:
-<select name="kategorijos"> 
-<?php 
+<!--Žanras/Kategorija:
+<select name="kategorijos">
+<?php /*
    while($row = mysqli_fetch_array($result2)) {
 	$selected = (isset($_POST["GENRE"]) && $_POST["GENRE"] == $row['zanras']) ? 'selected="selected"' : '';
 	?><option value="<?php echo $row['zanras']; ?>" <?php echo $selected;?>><?php echo $row['zanras']; ?></option>
@@ -46,8 +49,8 @@ Kūrėjų studija: <input type="text" name="DEV" /> <br><br>
    //echo "<option value= '".$row['zanras']."' >'".$row['zanras']."'</option>";
    //antras variantas
    }
-?>
-</select> <br><br>
+*/?>
+</select> <br><br>-->
 
 Kaina (€): <input type="number" name="PRICE" min="0" step="0.01"/> <br><br>
 Nuotrauka: <input type="file" name="fileToUpload" id="fileToUpload"> <br><br>
@@ -55,8 +58,7 @@ Nuotrauka: <input type="file" name="fileToUpload" id="fileToUpload"> <br><br>
 </form>
 
 <br><br>
-
-</body></html>
+</div>
 <?php
 include 'includes/overall/footer.php';
 ?>

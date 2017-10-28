@@ -8,22 +8,14 @@ $price = $_POST['PRICE'];
 
 
 
-$sql = "INSERT INTO zaidimai (PAV, DEV, GENRE, PRICE)
-VALUES ('".$pav."', '".$dev."', '".$genre."', '".$price."')";
 
-if ($con->query($sql) === TRUE) {
-    header('Location: admin.php');
-} else {
-    echo "Error: " . $sql . "<br>" . $con->error;
-}
 
-$con->close();
 
 //
 //image insertion below
 //
 
-
+$UploadedFileName=$_FILES['fileToUpload']['name'];
 $target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
@@ -61,10 +53,25 @@ if ($uploadOk == 0) {
     echo "Jūsų failas nebuvo įkeltas.";
 // if everything is ok, try to upload file
 } else {
-    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-        echo "Failas ". basename( $_FILES["fileToUpload"]["name"]). " sėkmingai įkeltas.";
+    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {		
+
+		
+		$sql = "INSERT INTO zaidimai (PAV, DEV, GENRE, PRICE, IMAGE)
+VALUES ('".$pav."', '".$dev."', '".$genre."', '".$price."', '".$target_file."')";
+
+if ($con->query($sql) === TRUE) {
+    header('Location: admin.php');
+} else {
+    echo "Error: " . $sql . "<br>" . $con->error;
+}
+		
+		echo "Failas ". basename( $_FILES["fileToUpload"]["name"]). " sėkmingai įkeltas.";
+		
     } else {
+		
         echo "Keliant failą įvyko klaida.";
     }
+	
 }
+$con->close();
 ?>

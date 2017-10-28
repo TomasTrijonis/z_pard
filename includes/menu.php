@@ -1,8 +1,26 @@
         <nav>
             <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="#">Page1</a></li>
-                <li><a href="#">Page2</a></li>
-                <li><a href="#">Page3</a></li>
+		
+		<?php	if($showGenre = $con->query("SELECT * FROM kategorijos")) {
+
+			if($showGenre->num_rows) {
+				
+				
+				
+				while($zanras = $showGenre->fetch_assoc()) {
+					
+					?><li><a href='#'><?php
+					echo $zanras['zanras'];
+					?></a><li>					
+
+					
+					<?php
+					
+				}
+				
+				
+			}
+			} ?>
+
             </ul>
         </nav>

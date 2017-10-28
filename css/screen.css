@@ -2,6 +2,8 @@
 /* CSS Document */
 
 	/* Resets */
+	
+
 ul {
     padding:0;
     margin:0 0 20px 0;
@@ -16,12 +18,9 @@ p {
     padding:0;
     margin:0 0 20px 0;
 }
-a:link, a:visited {
-    text-decoration:underline;
-    color:#000;
-}
-a:hover {
+a{
     text-decoration:none;
+	color: black;
 }
 ul li {
     padding:5px 0;
@@ -37,36 +36,47 @@ h2 {
     font-size:1.4em;
 }
 .logo {
+
     font:2em Arial;
     margin:0 0 10px 0;
     padding:0;
     width:400px;
     color:#fff;
 }
+
 /* Containers */
 body {
+	max-height: 1600px;
     background:gray;
     font-family:Arial;
     font-size:0.8em;
 }
-#container, footer {
+#container {
     background:#fff;
     width:1080px;
     margin:0 auto;
     padding:20px;
+	height: 1280px;
+    border-radius:5px 5px 0 0;
 }
+
+
 header {
     width:1080px;
     padding:10px;
     margin:0 auto 10px auto;
 }
-#container {
-    min-height:500px;
-    border-radius:5px 5px 0 0;
-}
+
+
 footer {
-    border-radius:0 0 5px 5px;
-}
+	background-color: white;
+	opacity: 0.8;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 20px;
+	padding: 5px;
+	padding-left: 20px;}
 .widget {
     margin-bottom:20px;
 }
@@ -120,3 +130,32 @@ footer {
     clear:both;
 }/* CSS Document */
 
+figure {
+	
+	margin-left: 10px;
+	float: left;
+}
+
+img{
+	width: 200px;
+	height: 280px;
+
+
+}
+
+figcaption{
+	font-size: 18px;
+	margin: 4px;
+	font-weight: bold;
+	width: 180px;
+}
+
+#game-container{
+	width: 750px;
+	height: auto;
+	
+}
+
+#tvarkymas{
+	clear: both;
+}
