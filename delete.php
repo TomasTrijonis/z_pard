@@ -8,5 +8,5 @@ $gameid = $_GET['gameid'];
 $result = mysqli_query($con, "DELETE FROM 'zaidimai' WHERE gameid=$gameid");
  
 //redirecting to the display page (index.php in our case)
-header("Location:index.php");
+header("Location:edit1.php");
 ?>

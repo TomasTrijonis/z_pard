@@ -100,8 +100,8 @@ while($res = mysqli_fetch_assoc($result)){
                 <td><input type="text" name="GENRE" value="<?php echo $GENRE;?>"></td>
             </tr>
             <tr>
-                <td><input type="hidden" PAV="gameid" value=<?php echo $_GET['gameid'];?>></td>
-                <td><input type="submit" PAV="update" value="Update"></td>
+                <td><input type="hidden" name="gameid" value=<?php echo $_GET['gameid'];?>></td>
+                <td><input type="submit" name="update" value="Update"></td>
             </tr>
         </table>
     </form>
