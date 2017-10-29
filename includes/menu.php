@@ -9,7 +9,8 @@
 				
 				while($zanras = $showGenre->fetch_assoc()) {
 					
-					?><li><a href='#'><?php
+					?><li>
+					<a href='<?php echo $zanras['zanras']; ?>.php'><?php
 					echo $zanras['zanras'];
 					?></a><li>					
 
