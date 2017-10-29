@@ -9,6 +9,6 @@ include 'includes/overall/header.php';
 
 		
 <?php 
-	include 'core/database/showfiles.php';
+	include 'core/database/fpsfiles.php';
 	include 'includes/overall/footer.php';
 ?>

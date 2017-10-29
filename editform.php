@@ -26,7 +26,8 @@ if(isset($_POST['update']))
     
     $PAV=$_POST['PAV'];
     $DEV=$_POST['DEV'];
-    $GENRE=$_POST['GENRE'];    
+    $GENRE=$_POST['GENRE'];
+	$IMAGE=$_POST['IMAGE']; 	
     
     // checking empty fields
     if(empty($PAV) || empty($DEV) || empty($GENRE)) {            
@@ -40,10 +41,13 @@ if(isset($_POST['update']))
         
         if(empty($GENRE)) {
             echo "<font color='red'>GENRE field is empty.</font><br/>";
-        }        
+        }
+		if(empty($IMAGE)) {
+            echo "<font color='red'>IMAGE field is empty.</font><br/>";
+        } 		
     } else {    
         //updating the table
-        $result = mysqli_query($con, "UPDATE zaidimai SET PAV='$PAV',DEV='$DEV',GENRE='$GENRE' WHERE gameid='$gameid' ");
+        $result = mysqli_query($con, "UPDATE zaidimai SET PAV='$PAV',DEV='$DEV',GENRE='$GENRE' ,IMAGE='$IMAGE' WHERE gameid='$gameid' ");
         
         //redirectig to the display pDEV. In our case, it is index.php
         header("Location: index.php");
@@ -51,6 +55,69 @@ if(isset($_POST['update']))
 }
 ?>
 <?php
+
+/*$UploadedFileName=$_FILES['fileToUpload2']['name'];
+$target_dir = "uploads/";
+$target_file = $target_dir . basename($_FILES["fileToUpload2"]["name"]);
+$uploadOk = 1;
+$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+// Check if image file is a actual image or fake image
+if(isset($_POST["submit"])) {
+    $check = getimagesize($_FILES["fileToUpload2"]["tmp_name"]);
+    if($check !== false) {
+        echo "Failas yra paveikslėlis - " . $check["mime"] . ".";
+        $uploadOk = 1;
+    } else {
+        echo "Failas nėra paveikslėlis.";
+        $uploadOk = 0;
+    }
+}
+
+// Check if file already exists
+if (file_exists($target_file)) {
+    echo "Failas jau egzistuoja.";
+    $uploadOk = 0;
+}
+// Check file size
+if ($_FILES["fileToUpload2"]["size"] > 500000) {
+    echo "Jūsų failas per didelis.";
+    $uploadOk = 0;
+}
+// Allow certain file formats
+if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+&& $imageFileType != "gif" ) {
+    echo "Leidžiami tik JPG, JPEG, PNG & GIF failų formatai";
+    $uploadOk = 0;
+}
+
+if ($uploadOk == 0) {
+    echo "Jūsų failas nebuvo įkeltas.";
+// if everything is ok, try to upload file
+} else {
+    if (move_uploaded_file($_FILES["fileToUpload2"]["tmp_name"], $target_file)) {		
+
+		
+		$sql = "INSERT INTO zaidimai (PAV, DEV, GENRE, PRICE, IMAGE)
+VALUES ('".$pav."', '".$dev."', '".$genre."', '".$price."', '".$target_file."')";
+
+if ($con->query($sql) === TRUE) {
+    header('Location: admin.php');
+} else {
+    echo "Error: " . $sql . "<br>" . $con->error;
+}
+		
+		echo "Failas ". basename( $_FILES["fileToUpload2"]["name"]). " sėkmingai įkeltas.";
+		
+    } else {
+		
+        echo "Keliant failą įvyko klaida.";
+    }
+	
+}*/
+
+
+
+
 //getting gameid from url
 include_once("core/database/connect.php");
 
@@ -66,6 +133,7 @@ while($res = mysqli_fetch_assoc($result)){
     $PAV = $res['PAV'];
     $DEV = $res['DEV'];
     $GENRE = $res['GENRE'];
+	$IMAGE = $res['IMAGE'];
 	
 }
 
@@ -84,7 +152,7 @@ while($res = mysqli_fetch_assoc($result)){
     <a href="index.php">Home</a>
     <br/><br/>
     
-    <form name="form1" method="post" action="editform.php">
+    <form name="form1" method="post" action="editform.php" enctype="multipart/form-data">
         <table border="0">
             <tr> 
                 <td>PAV</td>
@@ -98,6 +166,10 @@ while($res = mysqli_fetch_assoc($result)){
             <tr> 
                 <td>GENRE</td>
                 <td><input type="text" name="GENRE" value="<?php echo $GENRE;?>"></td>
+            </tr>
+			<tr> 
+                <td>NUOTRAUKA</td>
+                <td><input type="text" name="IMAGE" value="<?php echo $IMAGE;?>"></td> <!--<input type="file" name="fileToUpload" id="fileToUpload"> <br><br>-->
             </tr>
             <tr>
                 <td><input type="hidden" name="gameid" value=<?php echo $_GET['gameid'];?>></td>

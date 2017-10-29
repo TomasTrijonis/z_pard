@@ -35,6 +35,7 @@ include 'core/database/showfiles.php';
 		<td><?php echo $row['DEV']; ?></td>
 		<td><?php echo $row['GENRE']; ?></td>
 		<td><?php echo $row['PRICE']; ?></td>
+		<td><?php echo $row['IMAGE']; ?></td>
 		<td><a href="editform.php?id=<?php echo $row['gameid']; ?>"> edit </a></td>
 	</tr>
 	<?php
@@ -54,7 +55,8 @@ include 'core/database/showfiles.php';
         <tr bgcolor='#CCCCCC'>
             <td>Pavadinimas</td>
             <td>Developeris</td>
-            <td>Žanras</td>	
+            <td>Žanras</td>
+			<td>IMAGE</td>	
             <td>Update</td>
         </tr>
         <?php 
@@ -63,7 +65,8 @@ include 'core/database/showfiles.php';
             echo "<tr>";
             echo "<td>".$res['PAV']."</td>";
             echo "<td>".$res['DEV']."</td>";
-            echo "<td>".$res['GENRE']."</td>";    
+            echo "<td>".$res['GENRE']."</td>";
+			echo "<td>".$res['IMAGE']."</td>"; 			
             echo "<td><a href=\"editform.php?gameid=$res[gameid]\">Edit</a> | <a href=\"delete.php?gameid=$res[gameid]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";        
 		
 		
@@ -85,6 +88,10 @@ include 'core/database/showfiles.php';
             <tr> 
                 <td>Žanras</td>
                 <td><input type="text" name="GENRE"></td>
+            </tr>
+			<tr> 
+                <td>Nuotrauka</td>
+                <td><input type="text" name="IMAGE"></td>
             </tr>
             <tr> 
                 <td></td>
