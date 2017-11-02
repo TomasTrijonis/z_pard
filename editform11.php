@@ -65,8 +65,7 @@ while($res = mysqli_fetch_assoc($result)){
         <table border="0">
             <tr>
                 <td>Žanras</td>
-                <td><input type="text" name="zanras"
-				value="<?php echo $zanras;?>"></td>
+                <td><input type="text" name="zanras" value="<?php echo $zanras;?>"></td>
             </tr>
                 <td><input type="hidden" name="genre_id" value=<?php echo $_GET['genre_id'];?>></td>
                 <td><input type="submit" name="update" 	 value="Update"></td>
