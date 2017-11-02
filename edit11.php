@@ -47,7 +47,7 @@ $result2 = mysqli_query($con, $query2);
             echo "<tr>";
             echo "<td>".$res['zanras']."</td>";
             	
-            echo "<td><a href=\"editform11.php?gameid=$res[genre_id]\">Redaguoti</a> | <a href=\"delete.php?gameid=$res[genre_id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";        
+            echo "<td><a href=\"editform11.php?genre_id=$res[genre_id]\">Redaguoti</a> | <a href=\"delete.php?genre_id=$res[genre_id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";        
 		
 		
 		}
