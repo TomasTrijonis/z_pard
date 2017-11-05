@@ -3,7 +3,7 @@ include ('core/database/connect.php');
 
 $pav = $_POST['PAV'];
 $dev = $_POST['DEV'];
-$genre = $_POST['GENRE'];
+$genre_id = $_POST['genre_id'];
 $price = $_POST['PRICE'];
 
 
@@ -56,8 +56,8 @@ if ($uploadOk == 0) {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {		
 
 		
-		$sql = "INSERT INTO zaidimai (PAV, DEV, GENRE, PRICE, IMAGE)
-VALUES ('".$pav."', '".$dev."', '".$genre."', '".$price."', '".$target_file."')";
+		$sql = "INSERT INTO zaidimai (PAV, DEV, genre_id, PRICE, IMAGE)
+VALUES ('".$pav."', '".$dev."', '".$genre_id."', '".$price."', '".$target_file."')";
 
 if ($con->query($sql) === TRUE) {
     header('Location: admin.php');

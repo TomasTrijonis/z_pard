@@ -3,13 +3,13 @@ include ('core/database/connect.php');
 
 $pav = $_POST['PAV'];
 $dev = $_POST['DEV'];
-$genre = $_POST['GENRE'];
+$genre_id = $_POST['genre_id'];
 $price = $_POST['PRICE'];
 
 
 
-$sql = "INSERT INTO zaidimai (PAV, DEV, GENRE, PRICE)
-VALUES ('".$pav."', '".$dev."', '".$genre."', '".$price."')";
+$sql = "INSERT INTO zaidimai (PAV, DEV, genre_id, PRICE)
+VALUES ('".$pav."', '".$dev."', '".$genre_id."', '".$price."')";
 
 if ($con->query($sql) === TRUE) {
     header('Location: admin.php');

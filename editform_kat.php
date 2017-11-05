@@ -7,7 +7,7 @@ include 'includes/overall/header.php';
 $result2 = mysqli_query($con, $query2);*/
 ?>
 
-<h1> Admin pDEV </h1>
+<h1> Admin </h1>
 <br> 	
 
 <?php
@@ -61,7 +61,7 @@ while($res = mysqli_fetch_assoc($result)){
 <body>
     <a href="index.php">Home</a>
     <br/><br/>
-    <form name="form1" method="post" action="editform11.php" enctype="multipart/form-data">
+    <form name="form1" method="post" action="editform_kat.php" enctype="multipart/form-data">
         <table border="0">
             <tr>
                 <td>Žanras</td>

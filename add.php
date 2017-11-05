@@ -5,10 +5,10 @@ include_once("core/database/connect.php");
 if(isset($_POST['Submit'])) {    
     $PAV = $_POST['PAV'];
     $DEV = $_POST['DEV'];
-    $GENRE = $_POST['GENRE'];
+    $genre_id = $_POST['genre_id'];
         
     // checking empty fields
-    if(empty($PAV) || empty($DEV) || empty($GENRE)) {                
+    if(empty($PAV) || empty($DEV) || empty($genre_id)) {                
         if(empty($PAV)) {
             echo "<font color='red'>PAV field is empty.</font><br/>";
         }
@@ -17,7 +17,7 @@ if(isset($_POST['Submit'])) {
             echo "<font color='red'>DEV field is empty.</font><br/>";
         }
         
-        if(empty($GENRE)) {
+        if(empty($genre_id)) {
             echo "<font color='red'>Genre field is empty.</font><br/>";
         }
         
@@ -26,7 +26,7 @@ if(isset($_POST['Submit'])) {
     } else { 
         // if all the fields are filled (not empty)             
         //insert data to database
-        $result = mysqli_query($con, "INSERT INTO zaidimai(PAV,DEV,GENRE) VALUES('$PAV','$DEV','$GENRE')");
+        $result = mysqli_query($con, "INSERT INTO zaidimai(PAV,DEV,genre_id) VALUES('$PAV','$DEV','$genre_id')");
         
         //display success message
         echo "<font color='green'>Data added successfully.";

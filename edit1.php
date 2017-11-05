@@ -65,7 +65,7 @@ include 'core/database/showfiles.php';
             echo "<tr>";
             echo "<td>".$res['PAV']."</td>";
             echo "<td>".$res['DEV']."</td>";
-            echo "<td>".$res['GENRE']."</td>";
+            echo "<td>".$res['genre_id']."</td>";
 			echo "<td>".$res['IMAGE']."</td>"; 			
             echo "<td><a href=\"editform.php?gameid=$res[gameid]\">Edit</a> | <a href=\"delete.php?gameid=$res[gameid]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";        
 		

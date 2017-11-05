@@ -21,7 +21,7 @@ $result2 = mysqli_query($con, $query2);
 	?>
 	<tr class="record">
 		<td><?php echo $row['zanras']; ?></td>
-		<td><a href="editform11.php? id=<?php echo $row['genre_id']; ?>"> edit </a></td>
+		<td><a href="editform_kat.php? id=<?php echo $row['genre_id']; ?>"> edit </a></td>
 	</tr>
 	<?php
 		}
@@ -47,14 +47,14 @@ $result2 = mysqli_query($con, $query2);
             echo "<tr>";
             echo "<td>".$res['zanras']."</td>";
             	
-            echo "<td><a href=\"editform11.php?genre_id=$res[genre_id]\">Redaguoti</a> | <a href=\"delete.php?genre_id=$res[genre_id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";        
+            echo "<td><a href=\"editform_kat.php?genre_id=$res[genre_id]\">Redaguoti</a> | <a href=\"delete.php?genre_id=$res[genre_id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";        
 		
 		
 		}
         ?>
 		
 	<br><br>	
-    <form action="add1.php" method="post" name="form1">
+    <form action="add_kat.php" method="post" name="form1">
         <table width="35%" border="0" style="margin-top:30px;">
 		<br>
 		<br>

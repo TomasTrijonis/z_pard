@@ -30,7 +30,7 @@ include 'core/database/showfiles.php';
 <div id="tvarkymas">
 <br><br>
 <h3><a href = "edit1.php"> Tvarkyti individualias prekes </a><h3>
-<h3><a href = "edit11.php"> Tvarkyti redaguoti kategorijas prekes </a><h3>
+<h3><a href = "edit1_kat.php"> Tvarkyti redaguoti kategorijas prekes </a><h3>
 
 <br>
 <h3>Įterpkite naują prekę:</h3>

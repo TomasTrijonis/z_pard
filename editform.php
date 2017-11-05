@@ -26,11 +26,11 @@ if(isset($_POST['update']))
     
     $PAV=$_POST['PAV'];
     $DEV=$_POST['DEV'];
-    $GENRE=$_POST['GENRE'];
+    $genre_id=$_POST['genre_id'];
 	$IMAGE=$_POST['IMAGE']; 	
     
     // checking empty fields
-    if(empty($PAV) || empty($DEV) || empty($GENRE)) {            
+    if(empty($PAV) || empty($DEV) || empty($genre_id)) {            
         if(empty($PAV)) {
             echo "<font color='red'>PAV field is empty.</font><br/>";
         }
@@ -39,7 +39,7 @@ if(isset($_POST['update']))
             echo "<font color='red'>DEV field is empty.</font><br/>";
         }
         
-        if(empty($GENRE)) {
+        if(empty($genre_id)) {
             echo "<font color='red'>GENRE field is empty.</font><br/>";
         }
 		if(empty($IMAGE)) {
@@ -47,7 +47,7 @@ if(isset($_POST['update']))
         } 		
     } else {    
         //updating the table
-        $result = mysqli_query($con, "UPDATE zaidimai SET PAV='$PAV',DEV='$DEV',GENRE='$GENRE' ,IMAGE='$IMAGE' WHERE gameid='$gameid' ");
+        $result = mysqli_query($con, "UPDATE zaidimai SET PAV='$PAV',DEV='$DEV',genre_id='$genre_id' ,IMAGE='$IMAGE' WHERE gameid='$gameid' ");
         
         //redirectig to the display pDEV. In our case, it is index.php
         header("Location: index.php");
@@ -132,7 +132,7 @@ while($res = mysqli_fetch_assoc($result)){
 	
     $PAV = $res['PAV'];
     $DEV = $res['DEV'];
-    $GENRE = $res['GENRE'];
+    $genre_id = $res['genre_id'];
 	$IMAGE = $res['IMAGE'];
 	
 }
@@ -165,7 +165,7 @@ while($res = mysqli_fetch_assoc($result)){
             </tr>
             <tr> 
                 <td>GENRE</td>
-                <td><input type="text" name="GENRE" value="<?php echo $GENRE;?>"></td>
+                <td><input type="text" name="genre_id" value="<?php echo $genre_id;?>"></td>
             </tr>
 			<tr> 
                 <td>NUOTRAUKA</td>
