@@ -74,31 +74,26 @@ include 'core/database/showfiles.php';
         ?>
 		
 	<br><br>	
-    <form action="add.php" method="post" name="form1">
-        <table width="25%" border="0" style="margin-top:30px;">
+    <div id="tvarkymas">
+<br><br>
+<h3><a href = "edit1.php"> Tvarkyti individualias prekes </a><h3>
+<h3><a href = "edit1_kat.php"> Tvarkyti redaguoti kategorijas prekes </a><h3>
 
-            <tr> 
-                <td>Pavadinimas</td>
-                <td><input type="text" name="PAV"></td>
-            </tr>
-            <tr> 
-                <td>Kūrėjas</td>
-                <td><input type="text" name="DEV"></td>
-            </tr>
-            <tr> 
-                <td>Žanras</td>
-                <td><input type="text" name="GENRE"></td>
-            </tr>
-			<tr> 
-                <td>Nuotrauka</td>
-                <td><input type="text" name="IMAGE"></td>
-            </tr>
-            <tr> 
-                <td></td>
-                <td><input type="submit" name="Submit" value="Pridėti"></td>
-            </tr>
-        </table>
-    </form>
+<br>
+<h3>Įterpkite naują prekę:</h3>
+<br>
+<form action="add_item.php" method="POST" enctype="multipart/form-data"> 
+Žaidimo pavadinimas: <input type="text" name="PAV" /> <br><br>
+Kūrėjų studija: <input type="text" name="DEV" /> <br><br>
+
+
+Kaina (€): <input type="number" name="PRICE" min="0" step="0.01"/> <br><br>
+Nuotrauka: <input type="file" name="fileToUpload" id="fileToUpload"> <br><br>
+<input type="submit" name="submit" ><br><br>
+</form>
+
+<br><br>
+</div>
 </body>
 
 

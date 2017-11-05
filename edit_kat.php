@@ -11,7 +11,7 @@ $sql = "UPDATE kategorijos
 		WHERE genre_id=?";
 $q = $con->prepare($sql);
 $q->execute(array($zanras, $gameid));
-header("location: edit11.php");
+header("location: edit1_kat.php");
  
 ?>
 

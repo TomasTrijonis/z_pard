@@ -1,8 +1,19 @@
-					<div id="game-container">
+<?php 
+include 'core/init.php'; 
+include 'includes/overall/header.php'; 
+?>
 
-<?php
+		
+
+
+		
+		
+							<div id="game-container">
+
+<?php $filename=pathinfo(__FILE__, PATHINFO_FILENAME);
+
 //$join= $con->query;
-			if($result = $con->query("SELECT c.* , p.* FROM zaidimai c, kategorijos p WHERE c.genre_id=p.genre_id")) {
+			if($result = $con->query("SELECT c.* , p.* FROM zaidimai c, kategorijos p WHERE c.genre_id=p.genre_id AND c.genre_id='$filename'")) {
 
 			if($result->num_rows) {
 				
@@ -36,4 +47,13 @@
 			}
 			?>
 				</div>
+	
+
+		
+<?php 
+
+	include 'includes/overall/footer.php';
+?>
+		
+
 	

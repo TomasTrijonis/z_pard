@@ -7,7 +7,7 @@ include 'includes/overall/header.php';
 $result2 = mysqli_query($con, $query2);*/
 ?>
 
-<h1> Admin </h1>
+<h1> Admin. Kategorijų redagavimas. </h1>
 <br> 	
 
 <?php

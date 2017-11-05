@@ -10,7 +10,7 @@
 				while($zanras = $showGenre->fetch_assoc()) {
 					
 					?><li>
-					<a href='<?php echo $zanras['zanras']; ?>.php'><?php
+					<a href='<?php echo $zanras['genre_id']; ?>.php'><?php
 					echo $zanras['zanras'];
 					?></a><li>					
 

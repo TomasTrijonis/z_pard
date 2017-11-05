@@ -7,7 +7,7 @@ include 'includes/overall/header.php';
 $result2 = mysqli_query($con, $query2);*/
 ?>
 
-<h1> Admin pDEV </h1>
+<h1> Admin. Prekių redagavimas. </h1>
 <br> 	
 <?php
 include 'core/database/showfiles.php';
