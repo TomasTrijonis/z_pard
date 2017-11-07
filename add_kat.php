@@ -93,7 +93,8 @@ include 'includes/overall/header.php';
 
         
         //display success message
-        echo "<font color='green'>Data added successfully.";
+        echo "<font color='green'>Kategorija pridėta sėkmingai. Jūsų ID:" ;
+		echo $maxID;
         echo "<br/><a href='".$maxID.".php'>View Result</a>";
     }
 }
