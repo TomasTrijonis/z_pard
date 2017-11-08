@@ -17,6 +17,8 @@ if (empty($_POST)===false) {
 		$errors[] = 'Vartotojas neegzistuoja';
 	} else {
 		
+		
+		
 		$login = login($username, $password);
 		
 		if ($login === false) {
