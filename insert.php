@@ -11,6 +11,7 @@ $price = $_POST['PRICE'];
 
 
 
+
 //
 //image insertion below
 //

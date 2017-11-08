@@ -82,11 +82,11 @@ include 'core/database/showfiles.php';
 <br>
 <h3>Įterpkite naują prekę:</h3>
 <br>
-<form action="add_item.php" method="POST" enctype="multipart/form-data"> 
+<form action="insert.php" method="POST" enctype="multipart/form-data"> 
 Žaidimo pavadinimas: <input type="text" name="PAV" /> <br><br>
 Kūrėjų studija: <input type="text" name="DEV" /> <br><br>
 
-
+Kategorijos ID: <input type="number" name="genre_id" min="1" step="1"/>
 Kaina (€): <input type="number" name="PRICE" min="0" step="0.01"/> <br><br>
 Nuotrauka: <input type="file" name="fileToUpload" id="fileToUpload"> <br><br>
 <input type="submit" name="submit" ><br><br>
