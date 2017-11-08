@@ -4,6 +4,11 @@ function sanitize($data) {
 	return mysqli_real_escape_string($con,$data);
 }
 
+function array_sanitize(&$item) {
+	include ('core/database/connect.php');
+	$item = mysqli_real_escape_string($con,$item);
+	
+}
 
 function output_errors($errors){
 	$output = array();

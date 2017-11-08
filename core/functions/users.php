@@ -11,6 +11,20 @@
     // return false;
 // }
 
+function register_user($register_data) {
+	include ('core/database/connect.php');
+	array_walk($register_data, 'array_sanitize');
+	$register_data['password'] = md5($register_data['password']);
+	
+	$fields = '`' . implode('`, `', array_keys($register_data)) . '`';
+	$data = '\'' . implode('\', \'', $register_data) . '\'';
+	
+	
+	
+	mysqli_query($con, "INSERT INTO users ($fields) VALUES ($data)");
+	
+}
+
 function user_data($user_id) {
 	$data=array();
 	$user_id=(int)$user_id;
@@ -46,6 +60,14 @@ function user_exists($username){
 	$username=sanitize($username);
 	include ('core/database/connect.php');
 	$query = mysqli_query($con,"SELECT user_id FROM users WHERE username = '$username'");
+	return (mysqli_num_rows($query) == 1) ? true : false;
+}
+
+function email_exists($email){
+	
+	$email=sanitize($email);
+	include ('core/database/connect.php');
+	$query = mysqli_query($con,"SELECT user_id FROM users WHERE email = '$email'");
 	return (mysqli_num_rows($query) == 1) ? true : false;
 }
 
