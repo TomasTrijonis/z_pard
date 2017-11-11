@@ -6,7 +6,7 @@ include 'core/init.php';
 if (empty($_POST)===false) {
 	
 	$username=$_POST['username'];
-	$password=$_POST['password'];
+	$password=md5($_POST['password']);
 	
 	if (empty($username) || empty($password)) {
 				
