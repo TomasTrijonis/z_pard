@@ -66,7 +66,7 @@ include 'includes/overall/header.php';
 
       <body>  
            <br />  
-           <div class="gamecont" style="width:300px; float: left; ">  
+           <div class="gamecont" style="width:750px; ">  
                 <h3 align="center">Simple PHP Mysql Shopping Cart</h3><br />  
                 <?php  
                 $cart_query = "SELECT * FROM zaidimai ORDER BY gameid ASC";  
@@ -76,10 +76,10 @@ include 'includes/overall/header.php';
                      while($row = mysqli_fetch_array($cart_result))  
                      {  
                 ?>  
-                <div>  
+                <div  class="col-md-4">  
                      <form method="post"  action="cart_index.php?action=add&gameid=<?php echo $row["gameid"]; ?>">  
                           <div style="border:1px solid #333; background-color:#f1f1f1; border-radius:5px; padding:16px;" align="center">  
-                               <img src="<?php echo $row["IMAGE"]; ?>" /><br />  
+                               <img src="<?php echo $row["IMAGE"]; ?>" class="table-responsive"/><br />  
                                <h4 > <?php echo $row["PAV"]; ?></h4>  
                                <h4 >$ <?php echo $row["PRICE"]; ?></h4>  
 							   <script>
@@ -105,8 +105,8 @@ include 'includes/overall/header.php';
                 <div style="clear:both"></div>  
                 <br />  
                 <h3>Order Details</h3>  
-                <div>  
-                     <table style="width: 500px;">  
+                <div class="table-responsive">  
+                     <table  class="table table-bordered">  
                           <tr>  
                                <th width="50%">Item Name</th>   
 								<th width="25%">Price</th> 
@@ -136,7 +136,7 @@ include 'includes/overall/header.php';
                                      $total = $total + ($values["item_quantity"] * $values["item_price"]);  
                                }  
                           ?>  
-						  <tr><td><br>  </td><td> <br> </td></tr>
+						  
                           <tr>  
                                <td align="left">Total</td>  
                                <td align="left">$ <?php echo number_format($total, 2); ?></td>  
