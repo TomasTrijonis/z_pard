@@ -1,6 +1,7 @@
 
  <header>
-        <a href="index.php"> <h1 class="logo">Žaidimų parduotuvė </h1>  </a>
+        <a href="index.php" class="logo"> 
+		Žaidimų parduotuvė  </a>
 		<?php include 'includes/menu.php' ?>
         <div class="clear"></div>
     </header>

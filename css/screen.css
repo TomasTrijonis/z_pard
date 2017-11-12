@@ -4,9 +4,9 @@
 	/* Resets */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    /* display: none; <- Crashes Chrome on hover */
+
     -webkit-appearance: none;
-    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    margin: 0;
 }
 
 ul {
@@ -29,6 +29,7 @@ a{
 }
 ul li {
     padding:5px 0;
+	
 }
 ul li input[type="text"], ul li input[type="password"] {
     width:200px;
@@ -46,7 +47,8 @@ h2 {
     margin:0 0 10px 0;
     padding:0;
     width:400px;
-    color:#fff;
+	float: left;
+    
 }
 
 /* Containers */
@@ -59,16 +61,16 @@ body {
 #container {
     background:#fff;
     width:1080px;
-    margin:0 auto;
+	margin-left: 25px;
     padding:20px;
-	height: 1600px;
+
     border-radius:5px 5px 0 0;
 }
 
 
 header {
     width:1080px;
-    padding:10px;
+    padding:5px;
     margin:0 auto 10px auto;
 }
 
@@ -82,28 +84,30 @@ footer {
 	height: 20px;
 	padding: 5px;
 	padding-left: 20px;}
+	
 .widget {
-    margin-bottom:20px;
+
+
 }
-.widget h2 {
-    margin:0 0 10px 0;
-    padding:0 5px;
+.widget h4 {
+    margin-top:6px;
+    padding:0 2px;
     font-weight:normal;
-    border-bottom:1px solid #ddd;
+	margin-bottom: 0px;
+
 }
-.widget .inner {
-    margin:0 10px;
-}
+
 /* Navigation */
 nav {
-    float:left;
+    clear: both;	
 }
 nav ul {
     margin:0;
 }
 nav ul li {
     display:inline;
-    margin-right:10px;
+    margin-right:5px;
+	
 }
 nav ul li a {
     text-decoration:none;
@@ -116,14 +120,21 @@ nav ul li a.last {
 }
 /* Aside */
 aside {
-    width:260px;
-    float:right;
-    border-left:1px dashed #aaa;
-    padding-left:15px;
+width:600px;
+position: absolute;
+top: 0;
+right: 0;
+font-size: 12px;
 }
 /* Login */
-#login li.link {
-    margin-top:5px;
+#login li {
+    margin-top:2px;
+	display: inline-block;
+}
+
+#login input {
+    height: 18px;
+	width: 130px;
 }
 /* Footer */
 footer {

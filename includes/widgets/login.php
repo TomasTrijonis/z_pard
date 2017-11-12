@@ -1,5 +1,5 @@
             <div class="widget">
-                <h2>Prisijungimas</h2>
+                <h4>Prisijungimas</h4>
                 <div class="inner">
                    <form action="login.php" method="post">
 						<ul id='login'>
