@@ -1,10 +1,11 @@
 <?php 
 include 'core/init.php'; 
-include 'includes/overall/header.php'; 
-
+include 'includes/overall/header.php';
+ 
 if(empty($_POST) === false) {
 	
 	$required_fields = array('username', 'password', 'password_again', 'first_name', 'email');
+	
 	foreach($_POST as $key=>$value) {
 		
 	if(empty($value) && in_array($key, $required_fields) === true) {
@@ -86,36 +87,36 @@ if(empty($_POST) === false) {
 		
 		
 		
-		<form action="" method="post">
+		<form class="reg_form" action="" method="post">
 		
-		<ul>
-		
-		<li>
-			Username*:<br>
-			<input type="text" name="username">
-		</li>
-		<li>
-			Password*:<br>
-			<input type="password" name="password">
-		</li>
-		<li>
-			Password again*:<br>
-			<input type="password" name="password_again">
-		</li>
-		<li>
-			Vardas*:<br>
-			<input type="text" name="first_name">
-		</li>
-		<li>
-			Pavardė:<br>
-			<input type="text" name="last_name">
-		</li>
-		<li>
-			Email adresas*:<br>
-			<input type="text" name="email">
-		</li>
+		<ul id="reg_ul">
 		
 		<li>
+			*<br>
+			<input type="text" name="username" placeholder="Įveskite savo vartotojo vardą" >
+		</li >
+		<li>
+			*<br>
+			<input type="password" name="password" placeholder="Įveskite slaptažodį(6 arba daugiau simbolių)">
+		</li>
+		<li>
+			*<br>
+			<input type="password" name="password_again" placeholder="Savo slaptažodį įveskite vėl">
+		</li>
+		<li>
+			*<br>
+			<input type="text" name="first_name" placeholder="Įveskite savo vardą">
+		</li>
+		<li>
+			<br>
+			<input type="text" name="last_name" placeholder="Įveskite savo pavardę">
+		</li>
+		<li>
+			*<br>
+			<input type="text" name="email" placeholder="Įveskite el. pašto adresą">
+		</li>
+		
+		<li >
 			<input type="submit" value="Registruotis">
 		</li>
 		
