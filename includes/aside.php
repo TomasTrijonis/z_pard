@@ -1,5 +1,5 @@
 
-<aside>
+<div>
 	<?php 
 	if(logged_in()) {
 		include 'includes/widgets/loggedin.php';
@@ -18,4 +18,4 @@
 	<?php 
 	}
 	?>
-</aside>
+</div>

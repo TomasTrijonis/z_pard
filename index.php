@@ -70,9 +70,9 @@ include 'includes/overall/header.php';
                      while($row = mysqli_fetch_array($result))  
                      {  
                 ?>  
-                <div class="col-md-2" style="padding:2px;">  
+                <div class="col-sm-2" style="padding:10px;">  
                      <form method="post" action="index.php?action=add&gameid=<?php echo $row["gameid"]; ?>">  
-                          <div style="border:1px solid #333; background-color:#f1f1f1; border-radius:5px; padding:8px; height: 450px;" align="center">  
+                          <div style="border:0px solid #333; background-color:#f1f1f1; border-radius:5px; padding:8px; height: auto;" align="center">  
                                <img src="<?php echo $row["IMAGE"]; ?>" class="img-responsive" /><br />  
                                <h4 class="text-info"><?php echo $row["PAV"]; ?></h4>  
                                <h4 class="text-danger">$ <?php echo $row["PRICE"]; ?></h4>  
@@ -83,7 +83,7 @@ include 'includes/overall/header.php';
 					   
 					   if(logged_in()===true){
 ?>
-	 <input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="Add to Cart" /> 
+	 <input type="submit" name="add_to_cart" style="margin:10px;" class="btn btn-success" value="Pridėti į krepšelį" /> 
 <?php
 
 					  }
@@ -96,9 +96,9 @@ include 'includes/overall/header.php';
                 }  
                 ?>  
                 <div style="clear:both"></div>  
-                <br />  
+                <br/>  
                 <h3>Order Details</h3>  
-                <div class="table-responsive">  
+                <div class="table-responsive" >  
                      <table class="table table-bordered">  
                           <tr>  
                                <th width="40%">Item Name</th>  
@@ -135,7 +135,7 @@ include 'includes/overall/header.php';
                           ?>  
                      </table>  
                 </div>  
-						   	<?php include 'includes/aside.php'; ?>
+						   	<?php //include 'includes/aside.php'; ?>
            </div>  
            <br />  
 		   							   <script>

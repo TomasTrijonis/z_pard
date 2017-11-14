@@ -1,8 +1,8 @@
         
 		   
-		   <div class="widget">
-                <h4>Prisijungimas</h4>
-                <div class="inner">
+		   <div>
+                <!--<h4>Prisijungimas</h4>-->
+                <div>
 				
 				<?php
 				//function logged_in() {
@@ -11,25 +11,29 @@
 				
 				if(logged_in() === false) { ?>
 				
-                   <form action="login.php" method="post">
+                  <form action="login.php" method="post" id="signin" class="navbar-form navbar-right" role="form">
 						<ul id='login'>
+						<div class="input-group">
+					
 							<li>
-								Vartotojo vardas:<br>
-								<input type="text" name="username">			
+								<div class="input-group" style = "padding-bottom: 5px;">
+								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+								<input id="email" class="form-control" type="text" name="username" placeholder="Vartotojo vardas">			
 							</li>
+							</div>
 							<li>
-								Slaptažodis:<br>
-								<input type="password" name="password">	
+								<div class="input-group" style = >
+								<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+								<input id="password" class="form-control" type="password" name="password" placeholder="Password">	
 							</li>
-							<li>
-								<input type="submit" name="Prisijungti">
-							</li>
-							<li>
-								<a href="../../register.php">Registracija</a>
-							</li>
+							
+							</div>
+								<button type="submit" name="Prisijungti" class="btn btn-primary" style="margin-top: 5px;"> Prisijungti </button>
+								<button type="submit" class="btn btn-primary" style="margin-top: 5px;"><a href="register.php">Registracija</a> </button>
 						</ul>
 						
 				   </form>
+
 				   
 				<?php } else 
 					header ("Location: ../../index.php");
@@ -39,5 +43,6 @@
 			   
                 </div>
             </div>
+			</div>
 			
 

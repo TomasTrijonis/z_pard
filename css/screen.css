@@ -2,12 +2,9 @@
 /* CSS Document */
 
 	/* Resets */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
+	
 
-    -webkit-appearance: none;
-    margin: 0;
-}
+	
 
 ul {
     padding:0;
@@ -29,7 +26,6 @@ a{
 }
 ul li {
     padding:5px 0;
-	
 }
 ul li input[type="text"], ul li input[type="password"] {
     width:200px;
@@ -47,12 +43,12 @@ h2 {
     margin:0 0 10px 0;
     padding:0;
     width:400px;
-	float: left;
-    
+    color:black;
 }
 
 /* Containers */
 body {
+	
 	max-height: 1600px;
     background:gray;
     font-family:Arial;
@@ -61,16 +57,16 @@ body {
 #container {
     background:#fff;
     width:1080px;
-	margin-left: 25px;
+    margin:0 auto;
     padding:20px;
-
+	height: 1600px;
     border-radius:5px 5px 0 0;
 }
 
 
 header {
     width:1080px;
-    padding:5px;
+    padding:10px;
     margin:0 auto 10px auto;
 }
 
@@ -84,30 +80,29 @@ footer {
 	height: 20px;
 	padding: 5px;
 	padding-left: 20px;}
+/*.widget {
 	
-.widget {
-
-
+    margin-bottom:20px;
 }
-.widget h4 {
-    margin-top:6px;
-    padding:0 2px;
+.widget h2 {
+    margin:0 0 10px 0;
+    padding:0 5px;
     font-weight:normal;
-	margin-bottom: 0px;
-
+    border-bottom:1px solid #ddd;
 }
-
+.widget .inner {
+    margin:0 10px;
+}*/
 /* Navigation */
 nav {
-    clear: both;	
+    float:left;
 }
 nav ul {
     margin:0;
 }
 nav ul li {
     display:inline;
-    margin-right:5px;
-	
+    margin-right:10px;
 }
 nav ul li a {
     text-decoration:none;
@@ -118,23 +113,19 @@ nav ul li.current {
 nav ul li a.last {
     border-right:0;
 }
+
+
+
 /* Aside */
 aside {
-width:600px;
-position: absolute;
-top: 0;
-right: 0;
-font-size: 12px;
+    width:260px;
+    float:right;
+    /*border-left:1px dashed #aaa;*/
+    padding-left:15px;
 }
 /* Login */
-#login li {
-    margin-top:2px;
-	display: inline-block;
-}
-
-#login input {
-    height: 18px;
-	width: 130px;
+#login li.link {
+    margin-top:5px;
 }
 /* Footer */
 footer {
@@ -174,105 +165,4 @@ figcaption{
 
 #tvarkymas{
 	clear: both;
-}
-
-
-
-/* LOGINAS */
-
-@import url(http://fonts.googleapis.com/css?family=Roboto);
-
-/****** LOGIN MODAL ******/
-.loginmodal-container {
-  padding: 30px;
-  max-width: 350px;
-  width: 100% !important;
-  background-color: #F7F7F7;
-  margin: 0 auto;
-  border-radius: 2px;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-  overflow: hidden;
-  font-family: roboto;
-}
-
-.loginmodal-container h1 {
-  text-align: center;
-  font-size: 1.8em;
-  font-family: roboto;
-}
-
-.loginmodal-container input[type=submit] {
-  width: 100%;
-  display: block;
-  margin-bottom: 10px;
-  position: relative;
-}
-
-.loginmodal-container input[type=text], input[type=password] {
-  height: 44px;
-  font-size: 16px;
-  width: 100%;
-  margin-bottom: 10px;
-  -webkit-appearance: none;
-  background: #fff;
-  border: 1px solid #d9d9d9;
-  border-top: 1px solid #c0c0c0;
-  /* border-radius: 2px; */
-  padding: 0 8px;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-}
-
-.loginmodal-container input[type=text]:hover, input[type=password]:hover {
-  border: 1px solid #b9b9b9;
-  border-top: 1px solid #a0a0a0;
-  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
-  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
-  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
-}
-
-.loginmodal {
-  text-align: center;
-  font-size: 14px;
-  font-family: 'Arial', sans-serif;
-  font-weight: 700;
-  height: 36px;
-  padding: 0 8px;
-/* border-radius: 3px; */
-/* -webkit-user-select: none;
-  user-select: none; */
-}
-
-.loginmodal-submit {
-  /* border: 1px solid #3079ed; */
-  border: 0px;
-  color: #fff;
-  text-shadow: 0 1px rgba(0,0,0,0.1); 
-  background-color: #4d90fe;
-  padding: 17px 0px;
-  font-family: roboto;
-  font-size: 14px;
-  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
-}
-
-.loginmodal-submit:hover {
-  /* border: 1px solid #2f5bb7; */
-  border: 0px;
-  text-shadow: 0 1px rgba(0,0,0,0.3);
-  background-color: #357ae8;
-  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
-}
-
-.loginmodal-container a {
-  text-decoration: none;
-  color: #666;
-  font-weight: 400;
-  text-align: center;
-  display: inline-block;
-  opacity: 0.6;
-  transition: opacity ease 0.5s;
-} 
-
-.login-help{
-  font-size: 12px;
 }
