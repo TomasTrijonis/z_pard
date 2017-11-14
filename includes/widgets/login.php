@@ -28,8 +28,8 @@
 							</li>
 							
 							</div>
-								<button type="submit" name="Prisijungti" class="btn btn-primary" style="margin-top: 5px;"> Prisijungti </button>
-								<button type="submit" class="btn btn-primary" style="margin-top: 5px;"><a href="register.php">Registracija</a> </button>
+								<input type="submit" name="Prisijungti" class="btn btn-primary" style="margin-top: 5px;" value="Prisijungti">
+								<a class="btn btn-primary" style="margin-top: 5px; color: white;" href="register.php">Registracija </a>
 						</ul>
 						
 				   </form>

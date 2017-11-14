@@ -3,7 +3,7 @@ include 'core/init.php';
 include 'includes/overall/header.php'; 
 
 
-
+                               $total = 0; 
  if(isset($_POST["add_to_cart"]))  
  {  
       if(isset($_SESSION["shopping_cart"]))  
@@ -72,7 +72,7 @@ include 'includes/overall/header.php';
                 ?>  
                 <div class="col-sm-2" style="padding:10px;">  
                      <form method="post" action="index.php?action=add&gameid=<?php echo $row["gameid"]; ?>">  
-                          <div style="border:0px solid #333; background-color:#f1f1f1; border-radius:5px; padding:8px; height: auto;" align="center">  
+                          <div style="border:0px solid #333; background-color:#f1f1f1; border-radius:5px; padding:8px; height: 430px;" align="center">  
                                <img src="<?php echo $row["IMAGE"]; ?>" class="img-responsive" /><br />  
                                <h4 class="text-info"><?php echo $row["PAV"]; ?></h4>  
                                <h4 class="text-danger">$ <?php echo $row["PRICE"]; ?></h4>  
@@ -97,15 +97,15 @@ include 'includes/overall/header.php';
                 ?>  
                 <div style="clear:both"></div>  
                 <br/>  
-                <h3>Order Details</h3>  
+                <h3>Užsakymo detalės</h3>  
                 <div class="table-responsive" >  
                      <table class="table table-bordered">  
                           <tr>  
-                               <th width="40%">Item Name</th>  
-                               <th width="10%">Quantity</th>  
-                               <th width="20%">Price</th>  
-                               <th width="15%">Total</th>  
-                               <th width="5%">Action</th>  
+                               <th width="40%">Pavadinimas</th>  
+                               <th width="10%">Kiekis</th>  
+                               <th width="20%">Kaina</th>   
+                               <th width="15%">Kiekis x Kaina</th>  
+                               <th width="5%">Veiksmas</th>  
                           </tr>  
                           <?php   
                           if(!empty($_SESSION["shopping_cart"]))  
@@ -117,25 +117,36 @@ include 'includes/overall/header.php';
                           <tr>  
                                <td><?php echo $values["item_name"]; ?></td>  
                                <td><?php echo $values["item_quantity"]; ?></td>  
-                               <td>$ <?php echo $values["item_price"]; ?></td>  
-                               <td>$ <?php echo number_format($values["item_quantity"] * $values["item_price"], 2); ?></td>  
-                               <td><a href="index.php?action=delete&gameid=<?php echo $values["item_id"]; ?>"><span class="text-danger">Remove</span></a></td>  
+                               <td>€ <?php echo $values["item_price"]; ?></td>  
+                               <td>€ <?php echo number_format($values["item_quantity"] * $values["item_price"], 2); ?></td>  
+                               <td><a href="index.php?action=delete&gameid=<?php echo $values["item_id"]; ?>"><span class="text-danger">Pašalinti</span></a></td>  
                           </tr>  
                           <?php  
                                     $total = $total + ($values["item_quantity"] * $values["item_price"]);  
                                }  
                           ?>  
                           <tr>  
-                               <td colspan="3" align="right">Total</td>  
+                               <td colspan="3" align="right">Viso mokėti</td>  
                                <td align="right">$ <?php echo number_format($total, 2); ?></td>  
-                               <td></td>  
-                          </tr>  
-                          <?php  
+                               <td></td>
+							  </tr>  
+							  
+				
+								<?php
                           }  
                           ?>  
-                     </table>  
+                     </table> 
+			  <?php
+								if ($total>0){
+							  ?>
+							  
+							  <form method="get" action="checkout.php">
+								 <input type="hidden" name="" value="">
+								<input type="submit" a href="checkout.php" class="btn btn-success" role="button" value="Atsiskaityti">
+
+							  			 
                 </div>  
-						   	<?php //include 'includes/aside.php'; ?>
+								<?php  } ?>
            </div>  
            <br />  
 		   							   <script>

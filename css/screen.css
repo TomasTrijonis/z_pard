@@ -4,7 +4,13 @@
 	/* Resets */
 	
 
-	
+	input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  
+    -webkit-appearance: none;
+    margin: 0; 
+	/* neištrink blet*/
+}
 
 ul {
     padding:0;
@@ -57,7 +63,7 @@ body {
 #container {
     background:#fff;
     width:1080px;
-    margin:0 auto;
+    margin:20px;
     padding:20px;
 	height: 1600px;
     border-radius:5px 5px 0 0;
