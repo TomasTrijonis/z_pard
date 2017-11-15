@@ -26,6 +26,18 @@ if (empty($_POST)===false) {
 		} else {
 			//set the user session, redirect to home
 			$_SESSION['user_id']=$login;
+			
+			$cookie_name = "user_id";
+$cookie_value = "username";
+setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
+
+if(!isset($_COOKIE[$cookie_name])) {
+    echo "Cookie named '" . $cookie_name . "' is not set!";
+} else {
+    echo "Cookie '" . $cookie_name . "' is set!<br>";
+    echo "Value is: " . $_COOKIE[$cookie_name];
+}
+			
 			header('Location: index.php');
 			exit();
 		}

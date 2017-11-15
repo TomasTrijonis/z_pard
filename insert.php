@@ -17,10 +17,20 @@ $price = $_POST['PRICE'];
 //
 
 $UploadedFileName=$_FILES['fileToUpload']['name'];
+
+
+
+
 $target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+
+//$temp = explode(".", $_FILES["fileToUpload"]['name']);
+//$newfilename = round(microtime(true)) . '.' . end($temp);
+//move_uploaded_file($_FILES["fileToUpload"]["name"], "uploads/" . $newfilename);
+
+
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
