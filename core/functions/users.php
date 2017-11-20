@@ -25,6 +25,20 @@ function register_user($register_data) {
 	
 }
 
+function cart_user($cart_data) {
+	include ('core/database/connect.php');
+	array_walk($cart_data, 'array_sanitize');
+	
+	
+	$fields = '`' . implode('`, `', array_keys($cart_data)) . '`';
+	$data = '\'' . implode('\', \'', $cart_data) . '\'';
+	
+	
+	
+	mysqli_query($con, "INSERT INTO mokejimai ($fields) VALUES ($data)");
+	
+}
+
 function user_data($user_id) {
 	$data=array();
 	$user_id=(int)$user_id;

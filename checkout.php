@@ -37,7 +37,7 @@ include 'includes/overall/header.php';
                           ?>  
                           <tr>  
                                <td colspan="2" align="right" style="font-weight: bold; font-size: 1.8em;">Viso mokėti</td>  
-                               <td align="right" style="font-weight: bold; font-size: 1.8em;">€ <?php echo number_format($total, 2); ?></td>  
+                               <td align="right" style="font-weight: bold; font-size: 1.8em;">€<?php echo number_format($total, 2);?></td>  
                         
 							  </tr>  
 							  
@@ -47,6 +47,36 @@ include 'includes/overall/header.php';
                           ?>  
                      </table> 
 
+	<?php //if(isset($_GET['success']) && empty($_GET['success'])) {
+			
+			//echo 'Užsakymas sėkmingai pateiktas!';
+			
+		//} else {
+		
+		
+		
+		if(empty($_POST) === false && empty($errors) === true) {
+			
+			$cart_data=array(
+			'TEL' 			=> $_POST['TEL'],
+			'AD' 			=> $_POST['AD'],
+			'PAYMENT' 		=> $_POST['PAYMENT'],
+
+			);
+			
+
+			cart_user($cart_data);
+
+			echo 'Užsakymas sėkmingai pateiktas!';
+			exit();
+			
+		} else if(empty($errors) === false){
+			
+			echo output_errors($errors);
+			
+	//	}
+		}?>
+		
 
 		<form action="" method="post">
 		
@@ -55,18 +85,18 @@ include 'includes/overall/header.php';
 		<li>
 
 			<br>
-			<input type="number" name="tel" placeholder="Telefono numeris" >
+			<input type="number" name="TEL" placeholder="Telefono numeris" >
 		</li >
 		<li>
 
 			<br>
-			<input type="text" name="address" placeholder="Adresas">
+			<input type="text" name="AD" placeholder="Adresas">
 		</li>
 			<br>
 
 		<li>
 		Mokėjimo būdas
-		<select>
+		<select name="PAYMENT">
 		<option>PayPal</option>
 		<option>SwedBank</option>
 		<option>DNB</option>
