@@ -31,8 +31,13 @@ include 'includes/overall/header.php';
  
                                
                           </tr>  
-                          <?php  
+                          <?php
+						  $games="";
+								 foreach($_SESSION["shopping_cart"] as $keys => $values){
+									$games .= $values["item_name"] . " " .$values["item_quantity"] ."; ";}
+									//čia ciklas nustato kintamaji pagal zaidimus ir ju kiekius, veliau bus isvedama i db
                                     $total = $total + ($values["item_quantity"] * $values["item_price"]);  
+									
                                }  
                           ?>  
                           <tr>  
@@ -58,7 +63,9 @@ include 'includes/overall/header.php';
 		if(empty($_POST) === false && empty($errors) === true) {
 			
 			$cart_data=array(
-			'TEL' 			=> $_POST['TEL'],
+			
+			'GAMES'			=> $games,
+			'TEL' 			=> $_POST['telefonas'],
 			'AD' 			=> $_POST['AD'],
 			'PAYMENT' 		=> $_POST['PAYMENT'],
 
@@ -85,7 +92,7 @@ include 'includes/overall/header.php';
 		<li>
 
 			<br>
-			<input type="number" name="TEL" placeholder="Telefono numeris" >
+			<input type="number" name="telefonas" placeholder="Telefono numeris" >
 		</li >
 		<li>
 
