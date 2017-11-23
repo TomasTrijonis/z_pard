@@ -28,6 +28,7 @@ include 'core/database/showfiles.php';
 
 <h3><a href = "edit1.php"> Tvarkyti individualias prekes </a><h3>
 <h3><a href = "edit1_kat.php"> Tvarkyti redaguoti kategorijas prekes </a><h3>
+<h3><a href = "uzsakymai.php"> Peržiūrėti užsakymus </a><h3>
 
 <?php
 include 'includes/overall/footer.php';
