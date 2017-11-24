@@ -20,6 +20,39 @@ if (!$query) {
 <br> 	
 
 
+
+<form method="post">
+	
+	Ieškokite užsakymo pagal telefono numerį<br/>
+	<input type="text" name="search"/>
+	<input type="submit" name="submit" value="Search"/>
+	
+	
+	</form>
+	<br>
+	
+	<?php
+
+if(isset($_POST['submit'])){
+	
+	$search = $con->real_escape_string($_POST['search']);
+	
+	$resultSet = $con->query("SELECT * from mokejimai WHERE TEL LIKE '$search%' ");
+	
+	if ($resultSet->num_rows > 0) {
+		while($rows = $resultSet->fetch_assoc())
+		{
+			$order_id = $rows['order_id'];
+			$TEL = $rows['TEL'];
+			
+			echo "Uzsakymo id: $order_id<br />Telefono numeris: $TEL<br/>";
+			
+		}}else {
+			
+		}
+}
+?>
+
 <style type="text/css">
 		body {
 			font-size: 15px;
@@ -101,8 +134,8 @@ if (!$query) {
 		}
 	</style>
 </head>
+
 <body>
-	<h1>Table 1</h1>
 	<table class="data-table">
 		<caption class="title">Esami užsakymai</caption>
 		<thead>
@@ -143,12 +176,6 @@ if (!$query) {
 		</tfoot>
 	</table>
 	
-
-
-
-
-
-
 
 <?php
 include 'includes/overall/footer.php';
