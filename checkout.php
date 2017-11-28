@@ -65,6 +65,7 @@ include 'includes/overall/header.php';
 			$cart_data=array(
 			
 			'GAMES'			=> $games,
+			'PRICE'			=> $total,
 			'TEL' 			=> $_POST['telefonas'],
 			'AD' 			=> $_POST['AD'],
 			'PAYMENT' 		=> $_POST['PAYMENT'],

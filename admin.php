@@ -11,9 +11,7 @@ $result2 = $con->query($query2);
 <br> 	
 
 
-<?php
-include 'core/database/showfiles.php';
-?>
+
 <br><br>
 
 <?php

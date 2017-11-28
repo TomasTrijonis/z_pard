@@ -53,7 +53,7 @@ if(isset($_POST['submit'])){
 }
 ?>
 
-<style type="text/css">
+<style>
 		body {
 			font-size: 15px;
 			color: #343d44;
@@ -133,7 +133,7 @@ if(isset($_POST['submit'])){
 			background-color: #ffcccc;
 		}
 	</style>
-</head>
+
 
 <body>
 	<table class="data-table">
@@ -151,10 +151,10 @@ if(isset($_POST['submit'])){
 		</thead>
 		<tbody>
 		<?php
-		$no 	= 1;
+		$no 	= 0;
 		$total 	= 0;
 		while ($row = mysqli_fetch_array($query))
-		{
+		{	$no++;
 			$order_id  = $row['order_id'] == 0 ? '' : number_format($row['order_id']);
 			echo '<tr>
 					<td>'.$order_id.'</td>
@@ -165,13 +165,13 @@ if(isset($_POST['submit'])){
 					<td> <a href="delete_uz.php?order_id='.$row['order_id'].'">Delete</a></td>";  
 				</tr>';
 			$total += $row['order_id'];
-			$no++;
+			
 		}?>
 		</tbody>
 		<tfoot>
 			<tr>
 				<th colspan="4">TOTAL</th>
-				<th><?=number_format($total)?></th>
+				<th><?=number_format($no)?></th>
 			</tr>
 		</tfoot>
 	</table>

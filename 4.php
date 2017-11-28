@@ -35,7 +35,15 @@ include 'includes/overall/header.php';
                                <input type="text" name="quantity" class="form-control" onkeypress="return isNumberKey(event)"  value="1" />  
                                <input type="hidden" name="hidden_name" value="<?php echo $row["PAV"]; ?>" />  
                                <input type="hidden" name="hidden_price" value="<?php echo $row["PRICE"]; ?>" />  
-                      
+                            <?php
+					   
+					   if(logged_in()===true){
+?>
+	 <input type="submit" name="add_to_cart" style="margin:10px;" class="btn btn-success" value="Pridėti į krepšelį" /> 
+<?php
+
+					  }
+?>
                           </div>  
                      </form>  
                 </div>  
