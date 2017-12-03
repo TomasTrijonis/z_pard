@@ -145,7 +145,10 @@ if(isset($_POST['submit'])){
 				<th>KAINA</th>
 				<th>TELL</th>
 				<th>MOKESTIS</th>
+				
 				<th>Ištrinti</th>
+				<th>Patvirtinti</th>
+				<th>Patvirtinta?</th>
 				
 			</tr>
 		</thead>
@@ -162,7 +165,13 @@ if(isset($_POST['submit'])){
 					<td>'.$row['PRICE'].'</td>
 					<td>'.$row['TEL'].'</td>
 					<td>'.$row['PAYMENT'].'</td>
+					
 					<td> <a href="delete_uz.php?order_id='.$row['order_id'].'">Delete</a></td>  
+					<td> <a href="confirm_uz.php?order_id='.$row['order_id'].'">Confirm</a></td>
+
+					<td>'
+						.(($row['CONFIRM']=="1") ? 'Taip':"Ne").
+					'</td>
 				</tr>';
 			$total += $row['order_id'];
 			
