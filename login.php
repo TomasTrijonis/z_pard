@@ -28,7 +28,7 @@ if (empty($_POST)===false) {
 			$_SESSION['user_id']=$login;
 			
 			$cookie_name = "user_id";
-$cookie_value = "username";
+$cookie_value = $username;
 setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
 
 if(!isset($_COOKIE[$cookie_name])) {

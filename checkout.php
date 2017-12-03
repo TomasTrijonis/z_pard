@@ -57,8 +57,8 @@ include 'includes/overall/header.php';
 			
 		//} else {
 		
-		
-		
+				$username=$_COOKIE['user_id'];
+
 		if(empty($_POST) === false && empty($errors) === true) {
 			
 			$cart_data=array(
@@ -68,7 +68,7 @@ include 'includes/overall/header.php';
 			'TEL' 			=> $_POST['telefonas'],
 			'AD' 			=> $_POST['AD'],
 			'PAYMENT' 		=> $_POST['PAYMENT'],
-
+			'USER' 			=> $username,
 			);
 			
 
@@ -92,12 +92,26 @@ include 'includes/overall/header.php';
 		<li>
 
 			<br>
-			<input type="number" name="telefonas" placeholder="Telefono numeris" >
+			<input type="number" name="telefonas" placeholder="Telefono numeris" value="<?php
+$sql="SELECT TEL FROM mokejimai where USER='$username' ORDER BY order_id DESC LIMIT 1";
+$result = mysqli_query($con, $sql);
+while($row = mysqli_fetch_array($result)) {
+$string=$row['TEL'];
+$string = preg_replace('/\s+/', '', $string);
+echo $string;
+}?>">
 		</li >
 		<li>
 
 			<br>
-			<input type="text" name="AD" placeholder="Adresas">
+			<input type="text" name="AD" placeholder="Adresas" value="<?php
+$sql="SELECT AD FROM mokejimai where USER='$username' ORDER BY order_id DESC LIMIT 1";
+$result = mysqli_query($con, $sql);
+while($row = mysqli_fetch_array($result)) {
+$string=$row['AD'];
+$string = preg_replace('/\s+/', '', $string);
+echo $string;
+}?>">
 		</li>
 			<br>
 
