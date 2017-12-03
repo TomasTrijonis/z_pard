@@ -4,7 +4,6 @@ include 'includes/overall/header.php';
 
 
 ?>
-
  <div style="clear:both"></div>  
                 <br/>  
                 <h3>Užsakymo detalės</h3>  

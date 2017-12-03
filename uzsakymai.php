@@ -162,7 +162,7 @@ if(isset($_POST['submit'])){
 					<td>'.$row['PRICE'].'</td>
 					<td>'.$row['TEL'].'</td>
 					<td>'.$row['PAYMENT'].'</td>
-					<td> <a href="delete_uz.php?order_id='.$row['order_id'].'">Delete</a></td>";  
+					<td> <a href="delete_uz.php?order_id='.$row['order_id'].'">Delete</a></td>  
 				</tr>';
 			$total += $row['order_id'];
 			
