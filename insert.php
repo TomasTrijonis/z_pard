@@ -19,10 +19,12 @@ $price = $_POST['PRICE'];
 $UploadedFileName=$_FILES['fileToUpload']['name'];
 
 
-
+$temp = explode(".", $_FILES["fileToUpload"]["name"]);
 
 $target_dir = "uploads/";
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+$newfilename= round(microtime(true)) . '.' . end($temp);
+//$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+$target_file = $target_dir . $newfilename;
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 

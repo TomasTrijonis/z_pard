@@ -9,9 +9,7 @@ $result2 = mysqli_query($con, $query2);
 
 <h1> Admin page </h1>
 <br> 	
-<?php
-include 'core/database/showfiles.php';
-?>
+
 
 <br>
 <!--<table border="1" cellspacing="0" cellpadding="2" >
